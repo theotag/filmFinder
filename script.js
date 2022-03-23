@@ -5,7 +5,7 @@ const searchFilm = document.getElementById("submit-btn")
 
 const verifyAPI = async () => {
     keyAPI = document.getElementById("API-name")
-    const response = await fetch(`https://www.omdbapi.com/?t=batman&apikey=${keyAPI.value}`);
+    const response = await fetch(`http://www.omdbapi.com/?t=batman&apikey=${keyAPI.value}`);
     const key = await response.json();
     if (key.Response === "False") {
         keyAPI.placeholder = "Wrong key API"
@@ -27,7 +27,7 @@ const searchFilmsByS = async () => {
 
     const keyAPI = document.getElementById("API-name")
     const nameFilms = document.getElementById("search")
-    const response = await fetch(`https://www.omdbapi.com/?s=${nameFilms.value}&apikey=${keyAPI.value}`);
+    const response = await fetch(`http://www.omdbapi.com/?s=${nameFilms.value}&apikey=${keyAPI.value}`);
     const key = await response.json();
 
     const card = document.querySelectorAll('.card')
@@ -51,7 +51,7 @@ const searchFilmsByS = async () => {
 }
 const searchFilmsByT = async (el) => {
     const keyAPI = document.getElementById("API-name")
-    const responses = await fetch(`https://www.omdbapi.com/?t=${el.Title}&apikey=${keyAPI.value}`);
+    const responses = await fetch(`http://www.omdbapi.com/?t=${el.Title}&apikey=${keyAPI.value}`);
     const key2 = await responses.json();
 
         
